@@ -1,0 +1,28 @@
+<div id="list-danger-page" class="page has-menu">
+    <div class="menu">
+        <a class="item" href="#!index">
+            <i class="fa fa-home"></i>
+        </a>
+    </div>
+    <div id="list">
+        <div class="item" ng-repeat="q in list">
+            <div>
+                <b>Câu {{ q.index }}: {{ q.text }}</b>
+            </div>
+            <div id="q-image" style="margin-top: 10px; text-align: center; display: {{ q.image ? 'block' : 'none' }}">
+                <img src="images/questions/{{ q.image }}" />
+            </div>
+            <div id="answers" style="margin-top: 10px;">
+                <div class="answer {{ getResultClass(a) }}" ng-repeat="a in q.answers">
+                    <div style="width: 20px;">
+                        <input type="radio" name = "ans{{q.index}}" disabled="disabled" ng-checked="a.correct" />
+                    </div>
+                    <div class="a-text" style="margin-left: 7px;">{{ a.text }}</div>
+                </div>
+            </div>
+            <div id="q-tip" style="display: {{ q.tip ? 'block' : 'none' }}; margin-top: 10px;">
+                <i>Hướng dẫn: {{ q.tip }}</i>
+            </div>
+        </div>
+    </div>
+</div>

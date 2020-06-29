@@ -1,0 +1,31 @@
+<div id="list-wrong-page" class="page has-menu">
+    <div class="menu">
+        <a class="item" href="#!index">
+            <i class="fa fa-home"></i>
+        </a>
+    </div>
+    <div style="padding: 10px; color: blue; display: {{ list.length ? 'none' : 'block' }}">
+        Xin chúc mừng, hiện tại bạn không có câu nào làm sai!
+    </div>
+    <div id="list">
+        <div class="item" ng-repeat="q in list">
+            <div>
+                <b>Câu {{ q.index }}: {{ q.text }}</b>
+            </div>
+            <div id="q-image" style="display: {{ q.image ? 'block' : 'none' }}; margin-top: 10px; text-align: center;">
+                <img src="images/questions/{{ q.image }}" />
+            </div>
+            <div id="answers" style="margin-top: 10px;">
+                <div class="answer {{ getResultClass(q.index - 1, $index, a) }}" ng-repeat="a in q.answers">
+                    <div style="width: 20px;">
+                        <input type="radio" name="ans{{$index}}" disabled="disabled" ng-checked="hasChecked(q.index - 1, $index)" />
+                    </div>
+                    <div class="a-text" style="margin-left: 7px;">{{ a.text }}</div>
+                </div>
+            </div>
+            <div id="q-tip" style="display: {{ q.tip ? 'block' : 'none' }}; margin-top: 10px;">
+                <i>Hướng dẫn: {{ q.tip }}</i>
+            </div>
+        </div>
+    </div>
+</div>
