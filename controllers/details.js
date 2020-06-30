@@ -8,9 +8,9 @@ app.controller("detailsCtrl", function ($scope) {
         $scope.index = getCurrentQuestionIndex();
         
         if ($scope.topic == "" || $scope.topic == "0") {
-            $scope.question = questions[$scope.index];
+            $scope.question = fullQuestions[$scope.index];
         }else{
-            $scope.question = questions.filter(function(question) {return question.topic == parseInt($scope.topic)})[$scope.index];
+            $scope.question = fullQuestions.filter(function(question) {return question.topic == parseInt($scope.topic)})[$scope.index];
         }
         
         $scope.show_result = hasAnswered($scope.index);
@@ -43,7 +43,7 @@ app.controller("detailsCtrl", function ($scope) {
     $scope.nextQuestion = function() {
         var index = $scope.index;
         index ++;
-        if (index > questions.length - 1) index = 0;
+        if (index > fullQuestions.length - 1) index = 0;
 
         localStorage.currentIndex = index;
         load();
@@ -52,7 +52,7 @@ app.controller("detailsCtrl", function ($scope) {
     $scope.prevQuestion = function() {
         var index = $scope.index;
         index --;
-        if (index < 0) index = questions.length - 1;
+        if (index < 0) index = fullQuestions.length - 1;
 
         localStorage.currentIndex = index;
         load();

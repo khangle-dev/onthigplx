@@ -9,12 +9,12 @@ app.controller("questionCtrl", function ($scope) {
         $scope.show_result = true;
         
         if ($scope.topicCode == "" || $scope.topicCode == "0") {
-            $scope.questions = questions;
+            $scope.questions = fullQuestions;
         }else{
             if ($scope.topicCode == "8"){
-                $scope.questions = questions.filter(function(question) {return question.required > 0});
+                $scope.questions = fullQuestions.filter(function(question) {return question.required > 0});
             }else{
-                $scope.questions = questions.filter(function(question) {return question.topic == parseInt($scope.topicCode)});
+                $scope.questions = fullQuestions.filter(function(question) {return question.topic == parseInt($scope.topicCode)});
             }
         }
 

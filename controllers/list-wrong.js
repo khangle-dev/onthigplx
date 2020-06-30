@@ -2,7 +2,7 @@ app.controller("listWrongCtrl", function ($scope) {
     $scope.list = [];
     for (var i = 0; i < 450; i++) {
         if (hasAnswered(i) && isAnsweredWrong(i)) {
-            $scope.list.push(questions[i]);
+            $scope.list.push(fullQuestions[i]);
         }
     }
 

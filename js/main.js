@@ -81,7 +81,7 @@ function isAnswered(questionIndex, answerIndex) {
 }
 
 function hasAnswered(questionIndex) {
-    var question = questions[questionIndex];
+    var question = fullQuestions[questionIndex];
     for (var i = 0; i < question.answers.length; i++) {
         if (isAnswered(questionIndex, i)) {
             return true;
@@ -91,7 +91,7 @@ function hasAnswered(questionIndex) {
 }
 
 function isAnsweredWrong(questionIndex) {
-    var question = questions[questionIndex];
+    var question = fullQuestions[questionIndex];
     for (var i = 0; i < question.answers.length; i++) {
         var answer = question.answers[i];
         if (answer.correct && !isAnswered(questionIndex, i)) return true;
