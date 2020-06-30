@@ -100,12 +100,6 @@ function isAnsweredWrong(questionIndex) {
     return false;
 }
 
-function isDanger(questionIndex) {
-    var question = questions[questionIndex];
-    if (question.required > 0) return true
-    else return false
-}
-
 function showAlertBox(msg, closeText, callback) {
     var boxHtml = "<div id='alert-box' style='position: fixed; z-index: 99999; top: 0px; left: 0px; width: 100vw; height: 100vh; display: flex; align-items: center; justify-content: center; background-color: rgba(0, 0, 0, 0.5);'>"
         + "<div style='border: 1px solid #505050; padding: 15px; background-color: #fff; border-radius: 10px;'>"

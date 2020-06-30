@@ -13,9 +13,25 @@ app.config(function($routeProvider) {
             templateUrl : "views/list-danger.html",
             controller : "listDangerCtrl"
         })
+        .when("/list-exam", {
+            templateUrl : "views/list-exam.html",
+            controller : "listExamCtrl"
+        })
+        .when("/list-topic", {
+            templateUrl : "views/list-topic.html",
+            controller : "listTopicCtrl"
+        })
+        .when("/list-sign", {
+            templateUrl : "views/list-sign.html",
+            controller : "listSignCtrl"
+        })
         .when("/details", {
             templateUrl : "views/details.html",
             controller : "detailsCtrl"
+        })
+        .when("/question", {
+            templateUrl : "views/question.html",
+            controller : "questionCtrl"
         })
         .when("/reset", {
             templateUrl : "views/reset.html",

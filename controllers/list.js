@@ -5,7 +5,7 @@ app.controller("listCtrl", function ($scope) {
     $scope.list = [];
 
     for (var i = 0; i < 600; i++) {
-        var danger_css = isDanger(i) == true ? "danger" : ""
+        var danger_css = questions[i].required > 0 ? "danger" : ""
         var css_class = "" + danger_css;
 
         if (!hasAnswered(i)) {

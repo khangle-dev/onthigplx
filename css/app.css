@@ -111,6 +111,10 @@ img {
   background-color: #ff9400
 }
 
+.page-home .item-exam {
+  background-color: #5ac8fa
+}
+
 .page-home .item-recent {
   background-color: #0171ec
 }
@@ -143,6 +147,7 @@ img {
   align-items: flex-start;
   justify-content: center;
 }
+
 #list-page #list a {
   display: inline-block;
   border: 1px solid #a0a0a0;
@@ -153,6 +158,7 @@ img {
   margin-top: 5px;
   margin-right: 5px;
 }
+
 #list-page #list a:active {
   background-color: #d0d0d0;
 }
@@ -306,4 +312,63 @@ img {
 }
 #list-danger-page .answer:first-child {
   border-top: 1px dashed #a0a0a0;
+}
+
+
+#list-exam-page #list {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+#list-exam-page #list #exam {
+  display: inline-block;
+  border: 1px solid #a0a0a0;
+  height: 150px;
+  width: 150px;
+  text-align: center;
+  cursor: pointer;
+  margin-top: 5px;
+  margin-right: 5px;
+  padding: 10px;
+}
+
+#list-exam-page #list a:active {
+  background-color: #d0d0d0;
+}
+#list-exam-page #list a.correct {
+  background-color: #449d44;
+  border-color: #449d44;
+  color: #fff;
+}
+
+#list-exam-page #list a.danger {
+  border-color: #ff9400;
+}
+
+#list-exam-page #list a.correctdanger {
+  background-color: #449d44;
+  border-color: #ff9400;
+  color: #fff;
+}
+
+#list-exam-page #list a.correct:active {
+  background-color: #1f471f;
+  border-color: #1f471f;
+}
+#list-exam-page #list a.wrong {
+  background-color: #dc1354;
+  border-color: #dc1354;
+  color: #fff;
+}
+#list-exam-page #list a.wrongdanger {
+  background-color: #dc1354;
+  border-color: #ff9400;
+  color: #fff;
+}
+#list-exam-page #list a.wrong:active {
+  background-color: #922420;
+  border-color-color: #922420;
 }

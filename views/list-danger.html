@@ -18,7 +18,7 @@
                     <div style="width: 20px;">
                         <input type="radio" name = "ans{{q.index}}" disabled="disabled" ng-checked="a.correct" />
                     </div>
-                    <div class="a-text" style="margin-left: 7px;">{{ a.text }}</div>
+                    <div class="a-text" style="margin-left: 7px;">{{$index+1}}. {{ a.text }}</div>
                 </div>
             </div>
             <div id="q-tip" style="display: {{ q.tip ? 'block' : 'none' }}; margin-top: 10px;">

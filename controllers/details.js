@@ -4,8 +4,15 @@ app.controller("detailsCtrl", function ($scope) {
     load();
 
     function load() {
+        $scope.topic = getParaCurr("topic");
         $scope.index = getCurrentQuestionIndex();
-        $scope.question = questions[$scope.index];
+        
+        if ($scope.topic == "" || $scope.topic == "0") {
+            $scope.question = questions[$scope.index];
+        }else{
+            $scope.question = questions.filter(function(question) {return question.topic == parseInt($scope.topic)})[$scope.index];
+        }
+        
         $scope.show_result = hasAnswered($scope.index);
     }
 
