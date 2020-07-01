@@ -37,16 +37,17 @@
             <i class="fa fa-home"></i>
         </a>
     </div>
-    <div id="list">
-        <div class="item" ng-repeat="q in signs">
+    <div id="list" style="padding: 20px;">
+        <div class="item" ng-repeat="q in signs" style="border-bottom: #e9e7e7;border-bottom-width: 1px;border-bottom-style: solid;">
             <div>
-                <b>{{ q.code }}: {{ q.name }}</b>
+                <b style="color: #0171ec;">{{ q.code }}: {{ q.name }}</b>
             </div>
-            <div id="q-image" style="margin-top: 10px; text-align: center; display: {{ q.image ? 'block' : 'none' }}">
-                <img src="images/signs/{{ q.image }}" />
+            <div id="q-image" style="margin-top: 10px; display:flex">
+                <img src="images/signs/sign{{ q.image }}.png" />
+                <div class="a-text" style="margin-left: 7px;">{{q.detail}}</div>
             </div>
             <div id="answers" style="margin-top: 10px;">
-                <div class="a-text" style="margin-left: 7px;">{{q.detail}}</div>
+                
             </div>
         </div>
     </div>
