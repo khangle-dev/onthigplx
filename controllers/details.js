@@ -1,71 +1,67 @@
 app.controller("detailsCtrl", function ($scope) {
-    saveDataFromQueryString();
+    saveDataFromQueryString()
+    $scope.licenseCode = license.code
+    var index = parseInt(getParaCurr("index"))
+    
+    $scope.questions = fullQuestions
+    
+    load(index);
 
-    load();
-
-    function load() {
-        $scope.topic = getParaCurr("topic");
-        $scope.index = getCurrentQuestionIndex();
+    function load(index) {
+        $scope.index = index
         
-        if ($scope.topic == "" || $scope.topic == "0") {
-            $scope.question = fullQuestions[$scope.index];
-        }else{
-            $scope.question = fullQuestions.filter(function(question) {return question.topic == parseInt($scope.topic)})[$scope.index];
-        }
+        $scope.question = $scope.questions.filter(function(question){return question.index == $scope.index})[0]
         
-        $scope.show_result = hasAnswered($scope.index);
+        $scope.show_result = hasAnswered($scope.licenseCode, $scope.question.index)
     }
 
     $scope.getAnswerClass = function (answerIndex) {
         if (!$scope.show_result) {
-            return "";
+            return ""
         }
 
         var answer = $scope.question.answers[answerIndex];
         if (answer.correct) {
-            return "correct";
-        } else if (isAnswered($scope.index, answerIndex)) {
-            return "wrong";
+            return "correct"
+        } else if (isAnswered($scope.licenseCode, $scope.question.index, answerIndex)) {
+            return "wrong"
         } else {
-            return "";
+            return ""
         }
     };
 
     $scope.toggleAnswer = function (answerIndex) {
-        toggleAnswer($scope.index, answerIndex);
+        toggleAnswer($scope.licenseCode, $scope.question.index, answerIndex);
     };
 
     $scope.isAnswered = function(answerIndex) {
-        console.log(isAnswered($scope.index, answerIndex))
-        return isAnswered($scope.index, answerIndex) == true ? "checked" : ""
+        return isAnswered($scope.licenseCode, $scope.question.index, answerIndex) == true ? "checked" : ""
     }
 
     $scope.nextQuestion = function() {
-        var index = $scope.index;
-        index ++;
-        if (index > fullQuestions.length - 1) index = 0;
+        var index = $scope.index
+        index ++
+        if (index > fullQuestions.length) index = 0
 
-        localStorage.currentIndex = index;
-        load();
+        load(index)
     }
 
     $scope.prevQuestion = function() {
-        var index = $scope.index;
-        index --;
-        if (index < 0) index = fullQuestions.length - 1;
+        var index = $scope.index
+        index --
+        if (index <= 0) index = fullQuestions.length
 
-        localStorage.currentIndex = index;
-        load();
+        load(index)
     }
 
     $scope.toggleResult = function () {
-        $scope.show_result = !$scope.show_result;
+        $scope.show_result = !$scope.show_result
     };
 
     function saveDataFromQueryString() {
-        var index = getParaCurr("index");
+        var index = getParaCurr("index")
         if (index != "") {
-            db.set("currentIndex", index);
+            db.set("currentIndex", index)
         }
     }
 });
