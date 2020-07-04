@@ -1,5 +1,6 @@
+<h1 style="text-align: center;">60 câu liệt</h1>
 <div id="list-danger-page" class="page has-menu">
-    <h1 style="text-align: center;">60 câu liệt</h1>
+    
     <div class="menu">
         <a class="item" href="#!index">
             <i class="fa fa-home"></i>
@@ -8,7 +9,7 @@
     <div id="list">
         <div class="item" ng-repeat="q in list">
             <div>
-                <b>Câu {{ q.index }}: {{ q.text }}</b>
+                <b>Câu {{ q.no }}: {{ q.text }}</b>
             </div>
             <div id="q-image" style="margin-top: 10px; text-align: center; display: {{ q.image ? 'block' : 'none' }}">
                 <img src="images/questions/{{ q.image }}" />
