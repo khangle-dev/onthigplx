@@ -7,20 +7,34 @@
     </div>
     <div id="list">
         <div>
-            <h4>Hình phạt</h4>
+            <h4>Hành vi</h4>
             <div style="display: flex;">
                 <span style="color: #0171ec;"> {{ violation.entities  }}</span>
             </div>
             <div style="display: flex;">
                 <b> {{ violation.violation }}</b>
             </div>
-            <div style="color:red;">{{ violation.fines }}</div>
         </div>
         
         <div>
+            <h4>Hình phạt</h4>
+            <div style="color:red;">{{ violation.fines }}</div>
+            <div ng-repeat="b1 in bookmarks1">
+                <a>
+                    <h5 style="color:#0171ec;">Xem chi tiết {{b1.bookmark}}</h5>
+                </a>
+            </div>
+        </div>
+
+        <div>
             <h4>Hình phạt bổ sung</h4>
             <div style="display: flex;">
-                <span style="color: #0171ec;"> {{ violation.additionalPenalties }}</span>
+                <span> {{ violation.additionalPenalties }}</span>
+            </div>
+            <div ng-repeat="b2 in bookmarks2">
+                <a>
+                    <h5 style="color:#0171ec;">Xem chi tiết {{b2.bookmark}}</h5>
+                </a>
             </div>
         </div>
 
@@ -34,7 +48,12 @@
         <div>
             <h4>Khắc phục hậu quả</h4>
             <div style="display: flex;">
-                <span style="color: #0171ec;"> {{ violation.remedial }}</span>
+                <span> {{ violation.remedial }}</span>
+            </div>
+            <div ng-repeat="b3 in bookmarks3">
+                <a>
+                    <h5 style="color:#0171ec;">Xem chi tiết {{b3.bookmark}}</h5>
+                </a>
             </div>
         </div>
 
@@ -44,10 +63,10 @@
                 <a href="#!violation?index={{q.no}}&violationGroup={{topic.code}}">
                     <div>
                         <div style="display: flex;">
-                            <b style="color: #0171ec;"> {{ q.violation }}</b>
+                            <b> {{ q.violation }}</b>
                         </div>
                         <div style="color:red;">{{ q.fines }}</div>
-                        <div style="color:#0171ec;">Xem chi tiết</div>
+                        <h5 style="color:#0171ec;">Xem chi tiết</h5>
                     </div>
                 </a>
             </div>
