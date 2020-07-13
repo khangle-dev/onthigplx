@@ -434,3 +434,83 @@ img {
     background-color: #922420;
     border-color: #922420;
 }
+
+
+/* Put your css in here */
+
+#details-page .overlap {
+    position: absolute;
+    position: 0px 0px 0px 0px;
+}
+
+#details-page .ng-enter {
+    animation-name: swipeLeft;
+    -webkit-animation-name: swipeLeft;
+    -o-animation-name: swipeLeft;
+    animation: swipeLeft 0.25s ease-in-out;
+    -o-animation: swipeLeft 0.25s ease-in-out;
+    -webkit-animation: swipeLeft 0.25s ease-in-out;
+}
+
+#details-page .ng-leave {
+    animation-name: swipeRight;
+    -webkit-animation-name: swipeRight;
+    -o-animation-name: swipeRight;
+    animation: swipeRight 0.25s ease-in-out;
+    -o-animation: swipeRight 0.25s ease-in-out;
+    -webkit-animation: swipeRight 0.25s ease-in-out;
+}
+
+@keyframes swipeRight {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+@keyframes swipeLeft {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@-webkit-keyframes swipeRight {
+    0% {
+        -webkit-transform: translateX(0);
+    }
+    100% {
+        -webkit-transform: translateX(-100%);
+    }
+}
+
+@-webkit-keyframes swipeLeft {
+    0% {
+        -webkit-transform: translateX(-100%);
+    }
+    100% {
+        -webkit-transform: translateX(0);
+    }
+}
+
+@-o-keyframes swipeRight {
+    0% {
+        -o-transform: translateX(0);
+    }
+    100% {
+        -o-transform: translateX(-100%);
+    }
+}
+
+@-o-keyframes swipeLeft {
+    0% {
+        -o-transform: translateX(-100%);
+    }
+    100% {
+        -o-transform: translateX(0);
+    }
+}
